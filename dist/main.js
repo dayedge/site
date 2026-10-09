@@ -55,3 +55,19 @@
     }
   });
 })();
+
+(() => {
+  const button = document.querySelector('.copy-install');
+  if (!button || !navigator.clipboard) return;
+  button.hidden = false;
+  button.addEventListener('click', async () => {
+    const status = document.getElementById('install-status');
+    try {
+      await navigator.clipboard.writeText(document.getElementById('brew-command').textContent);
+      status.textContent = 'Install command copied.';
+      button.textContent = 'Copied';
+    } catch {
+      status.textContent = 'Select the command and copy it manually.';
+    }
+  });
+})();

@@ -1347,3 +1347,83 @@ footer{
     padding-block:16px;
   }
 }
+
+/* Installation stays part of the page, with a readable command on small screens. */
+#install{
+  scroll-margin-top:100px;
+}
+.install-requirements{
+  margin-top:24px;
+  color:var(--muted);
+  font-size:13px;
+}
+.install-guide{
+  min-width:0;
+}
+.install-guide h3{
+  font-size:18px;
+  font-weight:550;
+  letter-spacing:-.025em;
+}
+.install-guide .body-copy{
+  margin-top:12px;
+  font-size:14px;
+}
+.install-guide p a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.install-command{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:20px;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface);
+}
+.install-command pre{
+  flex:1;
+  min-width:0;
+  margin:0;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  font-size:12px;
+  line-height:1.7;
+}
+.copy-install{
+  flex:none;
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:6px 9px;
+  background:transparent;
+  color:var(--muted);
+  font-size:11px;
+  cursor:pointer;
+}
+.copy-install:hover{
+  background:var(--bg);
+  color:var(--text);
+}
+.install-note,.install-first-launch{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+.install-first-launch summary{
+  cursor:pointer;
+}
+.install-first-launch p{
+  margin-top:8px;
+}
+.install-source{
+  display:inline-block;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:12px;
+}
+.install-source:hover{
+  color:var(--text);
+}
