@@ -57,17 +57,59 @@
 })();
 
 (() => {
+  const modes = document.querySelector('.install-modes');
+  if (!modes) return;
   const button = document.querySelector('.copy-install');
-  if (!button || !navigator.clipboard) return;
+  const command = document.getElementById('brew-command');
+  const status = document.getElementById('install-status');
+  const guidance = document.getElementById('install-guidance');
+  const installGuidance = guidance.innerHTML;
+  let mode = 'install';
+  modes.hidden = false;
+  modes.addEventListener('change', (event) => {
+    mode = event.target.value;
+    const updating = mode === 'update';
+    command.textContent = updating
+      ? 'brew update && brew upgrade --cask dayedge'
+      : 'brew install --cask dayedge/tap/dayedge';
+    guidance.innerHTML = updating ? 'Installed with Homebrew? Run this in Terminal.' : installGuidance;
+    document.querySelector('.install-update-heading').hidden = !updating;
+    document.querySelector('.install-note').hidden = updating;
+    button.textContent = 'Copy';
+    button.setAttribute('aria-label', `Copy Homebrew ${mode} command`);
+    status.textContent = '';
+  });
+  if (!navigator.clipboard) return;
   button.hidden = false;
   button.addEventListener('click', async () => {
-    const status = document.getElementById('install-status');
+    const copiedCommand = command.textContent;
+    const copiedMode = mode;
     try {
-      await navigator.clipboard.writeText(document.getElementById('brew-command').textContent);
-      status.textContent = 'Install command copied.';
+      await navigator.clipboard.writeText(copiedCommand);
+      if (command.textContent !== copiedCommand) return;
+      status.textContent = `${copiedMode === 'install' ? 'Install' : 'Update'} command copied.`;
       button.textContent = 'Copied';
     } catch {
-      status.textContent = 'Select the command and copy it manually.';
+      if (command.textContent === copiedCommand) status.textContent = 'Select the command and copy it manually.';
     }
   });
+})();
+
+(() => {
+  const install = document.querySelector('.nav-install');
+  const heroInstall = document.querySelector('.hero .actions .primary');
+  if (!install || !heroInstall || !('IntersectionObserver' in window)) return;
+  const headerHeight = document.querySelector('.navigation').offsetHeight;
+  const setHeroVisible = (visible) => {
+    install.classList.toggle('is-hero-visible', visible);
+    install.inert = visible;
+    if (visible) install.setAttribute('aria-hidden', 'true');
+    else install.removeAttribute('aria-hidden');
+  };
+  const rect = heroInstall.getBoundingClientRect();
+  const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, headerHeight));
+  setHeroVisible(visibleHeight >= rect.height * 0.25);
+  new IntersectionObserver(([entry]) => {
+    setHeroVisible(entry.isIntersecting && entry.intersectionRatio >= 0.25);
+  }, {rootMargin: `-${headerHeight}px 0px 0px 0px`, threshold: [0, 0.25]}).observe(heroInstall);
 })();

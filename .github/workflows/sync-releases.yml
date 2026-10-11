@@ -1,0 +1,57 @@
+name: Sync published releases
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-site-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      UPDATE_BRANCH: automation/release-updates
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Prepare update branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if test -n "$(git ls-remote --heads origin "refs/heads/$UPDATE_BRANCH")"; then
+            git fetch origin "$UPDATE_BRANCH"
+            git checkout -b "$UPDATE_BRANCH" FETCH_HEAD
+            git merge --no-edit origin/main
+          else
+            git checkout -b "$UPDATE_BRANCH"
+          fi
+      - name: Sync and validate
+        run: |
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/sync-releases.py
+          python3 scripts/check-release.py
+      - name: Open or update release PR
+        run: |
+          if git diff --quiet -- dist/index.html dist/changelog/index.html data/releases.json; then
+            echo 'Published release data is already current.'
+            exit 0
+          fi
+          git add dist/index.html dist/changelog/index.html data/releases.json
+          git commit -m 'Update published release history'
+          git push -u origin "$UPDATE_BRANCH"
+          if test -z "$(gh pr list --head "$UPDATE_BRANCH" --base main --state open --json number --jq '.[0].number // empty')"; then
+            gh pr create --base main --head "$UPDATE_BRANCH" \
+              --title 'Update published release history' \
+              --body 'Sync the version labels and changelog from published stable DayEdge releases. Drafts and prereleases are excluded. Generated files and release checks passed.'
+          fi

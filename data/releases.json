@@ -1,0 +1,14 @@
+[
+  {
+    "version": "1.0.1",
+    "published": "2026-10-11",
+    "url": "https://github.com/dayedge/dayedge/releases/tag/v1.0.1",
+    "notes": "### Added\r\n\r\n- Date and time in the menu bar: choose an icon, date and time, or both, with localized presets and a custom format editor.\r\n\r\n### Improved\r\n\r\n- Meeting indicators adapt to your layout: meeting status stays alongside DayEdge in icon-only mode and appears separately when date and time are shown.\r\n- Smoother navigation: switching views crossfades the content while controls stay in place, and moving between days uses subtle directional transitions.\r\n\r\n### Fixed\r\n\r\n- Popover placement near screen edges: the panel stays within the display while its arrow follows the DayEdge icon.\r\n- Correct date badges: day numbers display in full; event counts still use 9+.\r\n- Reliable panel toggling: clicking the menu-bar icon while the panel is open closes it without blinking."
+  },
+  {
+    "version": "1.0.0",
+    "published": "2026-10-09",
+    "url": "https://github.com/dayedge/dayedge/releases/tag/v1.0.0",
+    "notes": "First public release of DayEdge, a native calendar and reminders app for your Mac menu bar.\r\n\r\n- Month and daily agendas with events, reminders, and weather.\r\n- Natural-language event and task entry, unified search, and optional calendar chat.\r\n- Meeting alerts with compact and full-screen reminders.\r\n- Eight themes and English and Polish interfaces.\r\n\r\nRequires macOS 15 or later. Optional on-device chat requires macOS 26 and Apple Intelligence; external providers are opt-in.\r\n\r\n### Install with Homebrew\r\n\r\n```sh\r\nbrew install --cask dayedge/tap/dayedge\r\n```\r\n\r\nHomebrew selects the Apple Silicon or Intel archive and verifies its SHA-256 checksum.\r\n\r\nThis release is self-signed and not notarized by Apple. The [Homebrew cask](https://github.com/dayedge/homebrew-tap) removes download quarantine from DayEdge.app after installation and upgrades. Global macOS security settings are unchanged.\r\n\r\nFor manual installation, use `arm64` on Apple Silicon or `x86_64` on Intel. See the [installation instructions](https://github.com/dayedge/dayedge#install) for first-launch guidance."
+  }
+]
