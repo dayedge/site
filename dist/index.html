@@ -30,6 +30,7 @@
     <div class="nav-links">
       <a class="nav-github" href="https://github.com/dayedge/dayedge">GitHub <span aria-hidden="true">↗</span></a>
       <a class="support-link" href="https://ko-fi.com/dayedge" aria-label="Support DayEdge on Ko-fi" aria-describedby="support-message"><span class="support-trigger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h13v8a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V7Z"/><path d="M17 8h1.5a3.5 3.5 0 0 1 0 7H17M7 3v1M11 3v1M15 3v1"/></svg><span>Support</span></span><span class="support-sheet" id="support-message" role="tooltip"><span class="support-sheet-title">A little coffee.<br>More good days.</span><span class="support-sheet-copy">Help me keep DayEdge free, focused, and thoughtfully made.</span><span class="support-sheet-action">Support on Ko-fi <span aria-hidden="true">↗</span></span></span></a>
+      <a class="button primary nav-install" href="#install" aria-label="Install DayEdge">Install</a>
     </div>
   </div>
 </header>
@@ -40,7 +41,7 @@
       <h1 id="hero-title">Your day,<br><span>closer.</span></h1>
       <p class="lede">DayEdge brings the calendars and reminders already on your Mac into one quick menu-bar view. Nothing new to manage.</p>
       <p class="hero-trust"><span class="trust-free">Free</span><span class="trust-separator" aria-hidden="true">·</span><span>Open source</span><span class="trust-separator" aria-hidden="true">·</span><span>Private by design</span></p>
-      <div class="actions"><a class="button primary" href="#install">Install with Homebrew <span aria-hidden="true">↓</span></a><span class="availability"><span class="now-dot" aria-hidden="true"></span>v1.0.0 · macOS 15+</span></div>
+      <div class="actions"><a class="button primary" href="#install">Install with Homebrew <span aria-hidden="true">↓</span></a><a class="availability" href="/changelog/" title="Release history"><span class="now-dot" aria-hidden="true"></span><!-- release:tag -->v1.0.1<!-- /release:tag --> · macOS 15+</a></div>
       <div class="hero-details"><span>Native macOS</span><span>Uses Apple Calendar + Reminders</span></div>
     </div>
     <div class="hero-stage" aria-label="DayEdge calendar, daily agenda, and Ask views">
@@ -189,19 +190,28 @@
   </section>
 
   <section class="closing wrap reveal" id="install" aria-labelledby="closing-title">
-    <div><p class="eyebrow"><span class="now-dot"></span> DayEdge 1.0.0 for macOS</p><h2 id="closing-title">Keep your day<br>close at hand.</h2><p class="install-requirements">macOS 15 or later · Apple Silicon and Intel</p></div>
+    <div><p class="eyebrow"><span class="now-dot" aria-hidden="true"></span> Latest release · <!-- release:version -->1.0.1<!-- /release:version --></p><h2 id="closing-title">Keep your day<br>close at hand.</h2><p class="install-requirements">macOS 15 or later · Apple Silicon and Intel</p></div>
     <div class="install-guide">
-      <h3>One command. Your day, closer.</h3>
-      <p class="body-copy">With <a href="https://brew.sh/">Homebrew</a> installed, paste this into Terminal.</p>
-      <div class="install-command"><pre><code id="brew-command">brew install --cask dayedge/tap/dayedge</code></pre><button class="copy-install" type="button" hidden aria-label="Copy Homebrew install command">Copy</button></div>
-      <span class="sr-only" id="install-status" role="status"></span>
-      <p class="install-note">Then open DayEdge from Applications. Allow Calendar and Reminders access to bring your day into view.</p>
-      <details class="install-first-launch"><summary>About this install</summary><p>DayEdge is self-signed and not notarized by Apple. Our <a href="https://github.com/dayedge/homebrew-tap">Homebrew tap</a> removes download quarantine from DayEdge.app after installation and updates. Your Mac’s global security settings stay unchanged.</p></details>
+      <div class="install-card" aria-labelledby="install-title">
+        <h3 id="install-title">Install DayEdge</h3>
+        <p class="install-tagline">One command. Your day, closer.</p>
+        <fieldset class="install-modes" hidden>
+          <legend class="sr-only">Install or update DayEdge</legend>
+          <label><input class="sr-only" type="radio" name="install-mode" value="install" checked><span>Install</span></label>
+          <label><input class="sr-only" type="radio" name="install-mode" value="update"><span>Update</span></label>
+        </fieldset>
+        <p class="install-update-heading" hidden>Already using DayEdge?</p>
+        <p class="body-copy" id="install-guidance">With <a href="https://brew.sh/">Homebrew</a> installed, paste this into Terminal.</p>
+        <div class="install-command"><pre><code id="brew-command">brew install --cask dayedge/tap/dayedge</code></pre><button class="copy-install" type="button" hidden aria-label="Copy Homebrew install command">Copy</button></div>
+        <span class="sr-only" id="install-status" role="status"></span>
+        <p class="install-note">Then open DayEdge from Applications. Allow Calendar and Reminders access to bring your day into view.</p>
+        <details class="install-first-launch"><summary>About this install</summary><p>DayEdge is self-signed and not notarized by Apple. Our <a href="https://github.com/dayedge/homebrew-tap">Homebrew tap</a> removes download quarantine from DayEdge.app after installation and updates. Your Mac’s global security settings stay unchanged.</p></details>
+      </div>
       <a class="install-source" href="https://github.com/dayedge/dayedge">Explore the source on GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </main>
-<footer><div class="wrap footer-inner"><a class="wordmark" href="#top" aria-label="DayEdge home"><span class="wordmark-day">Day</span><span class="wordmark-slash" aria-hidden="true">/</span><span class="wordmark-edge">Edge</span></a><p>Made for macOS <span>·</span> © 2026 DayEdge</p><div class="footer-links"><a href="https://github.com/dayedge/dayedge">GitHub <span aria-hidden="true">↗</span></a><a href="https://ko-fi.com/dayedge" title="Your support helps me keep improving DayEdge. Thank you."><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h13v8a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V7Z"/><path d="M17 8h1.5a3.5 3.5 0 0 1 0 7H17M7 3v1M11 3v1M15 3v1"/></svg><span>Support on Ko-fi</span></a></div></div></footer>
+<footer><div class="wrap footer-inner"><a class="wordmark" href="#top" aria-label="DayEdge home"><span class="wordmark-day">Day</span><span class="wordmark-slash" aria-hidden="true">/</span><span class="wordmark-edge">Edge</span></a><p>Made for macOS <span>·</span> © 2026 DayEdge</p><div class="footer-links"><a href="/changelog/">Changelog</a><a href="https://github.com/dayedge/dayedge">GitHub <span aria-hidden="true">↗</span></a><a href="https://ko-fi.com/dayedge" title="Your support helps me keep improving DayEdge. Thank you."><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h13v8a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V7Z"/><path d="M17 8h1.5a3.5 3.5 0 0 1 0 7H17M7 3v1M11 3v1M15 3v1"/></svg><span>Support on Ko-fi</span></a></div></div></footer>
 
 </body>
 </html>

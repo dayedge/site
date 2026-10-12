@@ -32,7 +32,7 @@ class Page(HTMLParser):
         if tag == "a" and a.get("href", "").startswith("#"):
             self.anchors.append(a["href"][1:])
 
-for file in ROOT.glob("*.html"):
+for file in ROOT.rglob("*.html"):
     page = Page()
     page.feed(file.read_text())
     if page.headings != 1: errors.append(f"{file.name}: expected one h1")
@@ -42,7 +42,7 @@ for file in ROOT.glob("*.html"):
         url = urlsplit(reference)
         if url.scheme or url.netloc:
             errors.append(f"External runtime resource: {reference}")
-        elif not (ROOT / url.path.lstrip("/")).is_file():
+        elif not ((ROOT / url.path.lstrip("/")) if url.path.startswith("/") else (file.parent / url.path)).is_file():
             errors.append(f"Missing asset: {reference}")
 
 css = (ROOT / "styles.css").read_text()

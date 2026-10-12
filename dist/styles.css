@@ -265,6 +265,24 @@ h3{
 .navigation a:hover{
   color:var(--text)
 }
+.navigation .nav-install{
+  flex:none;
+  min-height:32px;
+  padding:6px 13px;
+  font-size:12px;
+  white-space:nowrap;
+  transition:opacity .14s ease-out;
+}
+.navigation .nav-install:hover{
+  color:var(--button-text);
+  transform:none;
+  box-shadow:none;
+}
+.nav-install.is-hero-visible{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
 .skip-link{
   position:fixed;
   top:12px;
@@ -1348,8 +1366,9 @@ footer{
   }
 }
 
-/* Installation stays part of the page, with a readable command on small screens. */
+/* Install and update share one command card. */
 #install{
+  align-items:center;
   scroll-margin-top:100px;
 }
 .install-requirements{
@@ -1360,10 +1379,55 @@ footer{
 .install-guide{
   min-width:0;
 }
+.install-card{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--surface);
+}
 .install-guide h3{
-  font-size:18px;
+  font-size:24px;
   font-weight:550;
   letter-spacing:-.025em;
+}
+.install-tagline{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:14px;
+}
+.install-modes{
+  display:inline-flex;
+  gap:4px;
+  margin:24px 0 8px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--bg);
+}
+.install-modes label{
+  position:relative;
+  cursor:pointer;
+}
+.install-modes span{
+  display:block;
+  padding:5px 16px;
+  border-radius:6px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:500;
+}
+.install-modes input:checked+span{
+  background:var(--raised);
+  color:var(--text);
+}
+.install-modes input:focus-visible+span{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.install-update-heading{
+  margin-top:16px;
+  font-size:14px;
+  font-weight:550;
 }
 .install-guide .body-copy{
   margin-top:12px;
@@ -1379,9 +1443,9 @@ footer{
   gap:12px;
   margin-top:20px;
   padding:16px;
-  border:1px solid var(--line);
+  border:1px solid var(--strong-line);
   border-radius:12px;
-  background:var(--surface);
+  background:var(--bg);
 }
 .install-command pre{
   flex:1;
@@ -1412,8 +1476,17 @@ footer{
   font-size:12px;
   line-height:1.7;
 }
+.install-first-launch{
+  padding-top:16px;
+  border-top:1px solid var(--line);
+}
 .install-first-launch summary{
   cursor:pointer;
+}
+.install-first-launch summary:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+  border-radius:4px;
 }
 .install-first-launch p{
   margin-top:8px;
@@ -1426,4 +1499,62 @@ footer{
 }
 .install-source:hover{
   color:var(--text);
+}
+
+@media(max-width:700px){
+  .install-card{padding:24px}
+}
+
+/* Release history shares the landing page's type, palette, and quiet dividers. */
+.changelog{max-width:1100px;padding-top:90px;padding-bottom:110px}
+.changelog-intro{display:flex;flex-direction:column;align-items:flex-start;gap:24px;padding-bottom:72px}
+.changelog-intro h1{font-size:clamp(48px,7vw,76px);line-height:1.06;letter-spacing:-.055em}
+.changelog-intro .lede{max-width:38em}
+.changelog-github{font-size:13px;color:var(--muted)}
+.changelog-layout{display:grid;grid-template-columns:150px minmax(0,1fr);gap:70px;border-top:1px solid var(--line)}
+.release-index{position:sticky;top:104px;align-self:start;display:flex;flex-direction:column;gap:14px;padding-top:38px}
+.release-index .micro{margin-bottom:8px}
+.release-index a{font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.release-index a:hover{color:var(--accent)}
+.release-entry{padding-block:38px 48px;scroll-margin-top:104px}
+.release-entry+.release-entry{border-top:1px solid var(--line)}
+.release-heading{display:flex;flex-direction:column;gap:16px;margin-bottom:30px}
+.release-version{display:flex;align-items:center;gap:16px}
+.release-version h2{font-size:32px;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.release-latest{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);border:1px solid var(--strong-line);border-radius:5px;padding:3px 7px}
+.release-meta{display:flex;flex-wrap:wrap;gap:18px;color:var(--quiet);font-size:12px}
+.release-meta a{color:var(--muted)}
+.release-notes{font-size:14px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}
+.release-notes p+p{margin-top:16px}
+.release-notes h3{font-size:13px;font-weight:600;color:var(--text);margin:30px 0 12px}
+.release-notes h3:first-child{margin-top:0}
+.release-notes ul{padding-left:20px;margin:14px 0 20px}
+.release-notes li{padding-left:4px;margin-bottom:12px}
+.release-notes strong{font-weight:550;color:var(--text)}
+.release-notes a{color:var(--text);text-decoration:underline;text-decoration-color:var(--strong-line);text-underline-offset:3px}
+.release-notes a:hover{color:var(--accent)}
+.release-notes code{font-size:.9em;padding:2px 4px;border-radius:4px;background:var(--surface);color:var(--text)}
+.release-notes pre{padding:14px;border:1px solid var(--line);border-radius:7px;overflow:auto;margin-block:16px}
+.release-notes pre code{padding:0;background:none}
+@media(max-width:700px){
+  .changelog{padding-top:52px;padding-bottom:64px}
+  .changelog-intro{padding-bottom:40px}
+  .changelog-layout{grid-template-columns:minmax(0,1fr);gap:0}
+  .release-index{position:static;flex-direction:row;flex-wrap:wrap;gap:18px;padding-block:24px;border-bottom:1px solid var(--line)}
+  .release-index .micro{flex-basis:100%;margin-bottom:0}
+  .release-entry{padding-block:32px}
+  .changelog-intro .actions{align-items:flex-start;gap:20px}
+}
+
+@media(min-width:701px) and (max-width:1050px){
+  .navigation .nav-inner{gap:16px}
+  .navigation .nav-links{gap:12px}
+}
+@media(min-width:701px) and (max-width:850px){
+  .navigation nav{display:none}
+}
+@media(max-width:420px){
+  .navigation .nav-inner,.navigation .nav-links{gap:8px}
+  .navigation .nav-github span{margin-left:4px}
+  .support-trigger>span{display:none}
 }
