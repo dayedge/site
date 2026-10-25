@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.1.0",
+    "published": "2026-10-25",
+    "url": "https://github.com/dayedge/dayedge/releases/tag/v1.1.0",
+    "notes": "### Added\r\n\r\n- Smarter natural-language entry: DayEdge now reads tasks and events with [time-whisper](https://github.com/dayedge/time-whisper), an on-device parser that understands ranges, repeats with an end date, reminders, places and priorities.\r\n- Tag completion in search: typing `#` suggests your lists and calendars, filters as you type, and Tab, Return or a click completes the tag.\r\n- Alerts in event Quick Add: choose an alert, or keep the one named in your text.\r\n- Multi-day events in Quick Add: Starts and Ends each take a date and a time.\r\n- Paused meeting alerts at a glance: the menu bar icon shows a pause badge, and the status menu says when alerts resume.\r\n\r\n### Improved\r\n\r\n- Faster first entry: the parsing model loads when search opens and stays ready between launches.\r\n- Consistent Quick Add: task and event forms share the same controls, keys and End Repeat behaviour.\r\n- Predictable chat changes: the assistant works with exact dates, so the same request gives the same result.\r\n\r\n### Fixed\r\n\r\n- Custom repeats: an end date now includes the whole last day.\r\n- Moving to another day: events and tasks keep their time, in the editors and in chat."
+  },
+  {
     "version": "1.0.1",
     "published": "2026-10-11",
     "url": "https://github.com/dayedge/dayedge/releases/tag/v1.0.1",

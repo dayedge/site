@@ -14,7 +14,7 @@
   <meta property="og:image" content="./assets/social-preview.jpg">
   <meta property="og:image:alt" content="DayEdge full-screen meeting reminder with countdown and Join button">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/webp" href="./assets/dayedge-icon-112.webp">
   <link rel="preload" href="./assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./styles.css">
   <script src="./main.js" defer></script>
@@ -25,7 +25,7 @@
   <div class="wrap nav-inner">
     <a class="wordmark" href="#top" aria-label="DayEdge home"><span class="wordmark-day">Day</span><span class="wordmark-slash" aria-hidden="true">/</span><span class="wordmark-edge">Edge</span></a>
     <nav aria-label="Main navigation">
-      <a href="#themes">Themes</a><a href="#agenda">Agenda</a><a href="#tasks">Tasks</a><a href="#search">Search</a><a href="#ask">Chat</a><a href="#meetings">Meetings</a>
+      <a href="#themes">Themes</a><a href="#agenda">Agenda</a><a href="#tasks">Tasks</a><a href="#search">Search</a><a href="#ask">Ask</a><a href="#meetings">Meetings</a>
     </nav>
     <div class="nav-links">
       <a class="nav-github" href="https://github.com/dayedge/dayedge">GitHub <span aria-hidden="true">↗</span></a>
@@ -40,8 +40,8 @@
       <div class="hero-product"><img class="product-icon" src="./assets/dayedge-icon-224.webp" srcset="./assets/dayedge-icon-112.webp 112w, ./assets/dayedge-icon-224.webp 224w" sizes="(max-width: 700px) 80px, 96px" width="224" height="224" alt="DayEdge app icon"><p class="eyebrow">Apple Calendar + Reminders, in your menu bar</p></div>
       <h1 id="hero-title">Your day,<br><span>closer.</span></h1>
       <p class="lede">DayEdge brings the calendars and reminders already on your Mac into one quick menu-bar view. Nothing new to manage.</p>
-      <p class="hero-trust"><span class="trust-free">Free</span><span class="trust-separator" aria-hidden="true">·</span><span>Open source</span><span class="trust-separator" aria-hidden="true">·</span><span>Private by design</span></p>
-      <div class="actions"><a class="button primary" href="#install">Install with Homebrew <span aria-hidden="true">↓</span></a><a class="availability" href="/changelog/" title="Release history"><span class="now-dot" aria-hidden="true"></span><!-- release:tag -->v1.0.1<!-- /release:tag --> · macOS 15+</a></div>
+      <p class="hero-trust"><span class="trust-free">Free</span><span class="trust-separator" aria-hidden="true">·</span><span>Open source</span><span class="trust-separator" aria-hidden="true">·</span><span>No account</span></p>
+      <div class="actions"><a class="button primary" href="#install">Install with Homebrew <span aria-hidden="true">↓</span></a><a class="availability" href="/changelog/" title="Release history"><span class="now-dot" aria-hidden="true"></span><!-- release:tag -->v1.1.0<!-- /release:tag --> · macOS 15+</a></div>
       <div class="hero-details"><span>Native macOS</span><span>Uses Apple Calendar + Reminders</span></div>
     </div>
     <div class="hero-stage" aria-label="DayEdge calendar, daily agenda, and Ask views">
@@ -51,7 +51,7 @@
       <div class="hero-shot hero-main">
         <picture><source media="(prefers-color-scheme: light)" srcset="./assets/quartz-pro-420.webp 420w, ./assets/quartz-pro-840.webp 840w" sizes="(max-width: 700px) 60vw, 385px"><img class="shot" src="./assets/graphite-pro-840.webp" srcset="./assets/graphite-pro-420.webp 420w, ./assets/graphite-pro-840.webp 840w" sizes="(max-width: 700px) 60vw, 385px" width="840" height="1418" alt="DayEdge month calendar with today's events, reminders, and meeting links" fetchpriority="high"></picture>
       </div>
-      <p class="stage-caption">The month ahead. The moment you’re in.</p>
+      <p class="stage-caption">Your month and today, in one view.</p>
     </div>
   </section>
 
@@ -84,7 +84,7 @@
           <button type="button" data-pick="6" aria-pressed="false" aria-label="Dark theme"><span class="swatch dark"></span><span class="theme-label">Dark</span></button>
           <button type="button" data-pick="7" aria-pressed="false" aria-label="System theme"><span class="swatch system"></span><span class="theme-label">System</span></button>
         </div>
-        <p class="theme-hint micro">Eight themes. One familiar calendar.</p>
+        <p class="theme-hint micro">Eight themes, light and dark</p>
         <p class="sr-only" id="theme-announcement" role="status" aria-live="polite"></p>
       </div>
     </div>
@@ -95,7 +95,7 @@
       <div class="section-copy reveal"><p class="eyebrow"><span class="section-number">02</span> Daily agenda</p><h2 id="agenda-title">See the shape<br>of your day.</h2><p class="body-copy">Your events and reminders share a timeline. See what’s next, what needs doing, and the space in between.</p>
         <ul class="detail-list"><li><span class="micro">A</span><div><h3>Events meet reminders</h3><p>Timed tasks sit alongside your calendar events.</p></div></li><li><span class="micro">B</span><div><h3>A little room to breathe</h3><p>The now line shows how long you’re free.</p></div></li><li><span class="micro">C</span><div><h3>A glance outside</h3><p>Weather, sunrise, and sunset in your daily view.</p></div></li></ul>
       </div>
-      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/agenda-840.webp" srcset="./assets/agenda-420.webp 420w, ./assets/agenda-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Daily timeline showing Morning Run, Team sync, Lunch with Alex, and a Pickup Package reminder"><figcaption>One timeline. Events and reminders together.</figcaption></figure>
+      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/agenda-840.webp" srcset="./assets/agenda-420.webp 420w, ./assets/agenda-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Daily timeline showing Morning Run, Team sync, Lunch with Alex, and a Pickup Package reminder"><figcaption>Events and reminders on one timeline.</figcaption></figure>
     </div>
   </section>
 
@@ -110,19 +110,19 @@
           <div><h3>Find exactly what you need</h3><p class="query-line"><code>invoice <span class="query-token">type:task</span> <span class="query-token">day:tomorrow</span></code></p><p class="query-explanation">Start with a word. Add filters only when you need them.</p></div>
         </div>
       </div>
-      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/tasks-932.webp" srcset="./assets/tasks-466.webp 466w, ./assets/tasks-932.webp 932w" sizes="(max-width: 700px) 88vw, 420px" width="932" height="1510" loading="lazy" alt="DayEdge Tasks view with Needs attention, Work and Personal lists, due times, priorities and completion circles"><figcaption>Your lists. A clear place to begin.</figcaption></figure>
+      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/tasks-932.webp" srcset="./assets/tasks-466.webp 466w, ./assets/tasks-932.webp 932w" sizes="(max-width: 700px) 88vw, 420px" width="932" height="1510" loading="lazy" alt="DayEdge Tasks view with Needs attention, Work and Personal lists, due times, priorities and completion circles"><figcaption>Reminders, grouped by list.</figcaption></figure>
     </div>
   </section>
 
   <section class="section" id="language" aria-labelledby="language-title">
     <div class="wrap split">
-      <div class="section-copy reveal"><p class="eyebrow"><span class="section-number">04</span> Natural language</p><h2 id="language-title">Less filling in.<br>More getting on.</h2><p class="body-copy">Type “Dentist next Tuesday at 10.” DayEdge picks out the date and time, ready to create an event or reminder. Use ordinary language to find things, too.</p>
+      <div class="section-copy reveal"><p class="eyebrow"><span class="section-number">04</span> Natural language</p><h2 id="language-title">Type it the way<br>you’d say it.</h2><p class="body-copy">Type “Dentist next Tuesday at 10.” DayEdge picks out the date and time, ready to create an event or reminder. Use ordinary language to find things, too.</p>
         <figure class="language-detail">
           <div class="language-crop"><img src="./assets/language-840.webp" width="840" height="1418" loading="lazy" alt="Magnified DayEdge task input: Dentist next Tuesday at 10, ready to create a reminder on Tuesday 13 October at 10:00"></div>
-          <figcaption><span class="detail-tick" aria-hidden="true"></span> A few words. Ready to create.</figcaption>
+          <figcaption><span class="detail-tick" aria-hidden="true"></span> Ready to create from one line.</figcaption>
         </figure>
       </div>
-      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/language-840.webp" srcset="./assets/language-420.webp 420w, ./assets/language-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Typing Dentist next Tuesday at 10 offers a reminder due Tuesday 13 October at 10:00"><figcaption>Say what. Say when. Ready to create.</figcaption></figure>
+      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/language-840.webp" srcset="./assets/language-420.webp 420w, ./assets/language-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Typing Dentist next Tuesday at 10 offers a reminder due Tuesday 13 October at 10:00"><figcaption>One line, ready to become an event or reminder.</figcaption></figure>
     </div>
   </section>
 
@@ -130,20 +130,20 @@
     <div class="wrap split reverse">
       <div class="section-copy reveal">
         <p class="eyebrow"><span class="section-number">05</span> Search</p>
-        <h2 id="search-title">A few words.<br>The right result.</h2>
+        <h2 id="search-title">Search events<br>and tasks together.</h2>
         <p class="body-copy">Find events and tasks from one search field. Start with a title or a phrase like “standup tomorrow”. Add familiar search operators to narrow by person, date or type.</p>
         <figure class="language-detail search-detail">
           <div class="language-crop search-crop">
             <div class="search-fragment search-input"><img src="./assets/search-840.webp" width="840" height="1418" loading="lazy" alt="DayEdge search field with the query review"></div>
             <div class="search-fragment search-results"><img src="./assets/search-840.webp" width="840" height="1418" loading="lazy" alt="Magnified search matches: Review weekly plan today at 09:00 and UX review on Thursday 15 October at 13:30"></div>
           </div>
-          <figcaption><span class="detail-tick" aria-hidden="true"></span> The words you remember. The result you need.</figcaption>
+          <figcaption><span class="detail-tick" aria-hidden="true"></span> Matching events and tasks, grouped by day.</figcaption>
         </figure>
         <div class="query-examples" aria-label="Search operator example">
           <div><h3>A familiar way to be specific</h3><p class="query-line"><code>review <span class="query-token">with:Alex</span> <span class="query-token">type:event</span> <span class="query-token">day:tomorrow</span></code></p><p class="query-explanation">Combine a keyword with a participant, event type and date.</p></div>
         </div>
       </div>
-      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/search-840.webp" srcset="./assets/search-420.webp 420w, ./assets/search-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Full DayEdge Search view for review, showing five matching events and tasks grouped by date"><figcaption>Events and tasks. One place to find them.</figcaption></figure>
+      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/search-840.webp" srcset="./assets/search-420.webp 420w, ./assets/search-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Full DayEdge Search view for review, showing five matching events and tasks grouped by date"><figcaption>Events and tasks in one search.</figcaption></figure>
     </div>
   </section>
 
@@ -155,11 +155,11 @@
             <div class="ask-fragment ask-answer"><img src="./assets/ask-840.webp" width="840" height="1418" loading="lazy" alt="DayEdge: A little tight. You’d be back around 12:05, with just 10 minutes to get to Lunch with Alex at 12:15."></div>
             <div class="ask-fragment ask-change"><img src="./assets/ask-840.webp" width="840" height="1418" loading="lazy" alt="Move event approval: Lunch with Alex moves exactly 20 minutes, from 12:15–13:15 to 12:35–13:35, with Allow and Don’t Allow controls"></div>
           </div>
-          <figcaption><span class="detail-tick" aria-hidden="true"></span> Your context. A little breathing room.</figcaption>
+          <figcaption><span class="detail-tick" aria-hidden="true"></span> A tight schedule, and a proposed fix.</figcaption>
         </figure>
         <ul class="detail-list"><li><span class="micro">01</span><div><h3>From question to context</h3><p>Ask about your actual events and reminders.</p></div></li><li><span class="micro">02</span><div><h3>A change you can review</h3><p>See the proposed time before allowing a move.</p></div></li></ul><p class="fine-print">Ask uses on-device models by default. For more advanced conversations, you can opt in to external model integration. Available actions depend on the selected model and your approval settings.</p>
       </div>
-      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/ask-840.webp" srcset="./assets/ask-420.webp 420w, ./assets/ask-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Ask spots a tight lunch schedule after school pickup and proposes moving Lunch with Alex 20 minutes later, with Allow and Don’t Allow controls"><figcaption>Your schedule, with room for context.</figcaption></figure>
+      <figure class="media-plate reveal"><img class="shot feature-shot" src="./assets/ask-840.webp" srcset="./assets/ask-420.webp 420w, ./assets/ask-840.webp 840w" sizes="(max-width: 700px) 88vw, 420px" width="840" height="1418" loading="lazy" alt="Ask spots a tight lunch schedule after school pickup and proposes moving Lunch with Alex 20 minutes later, with Allow and Don’t Allow controls"><figcaption>A proposed change, waiting for your approval.</figcaption></figure>
     </div>
   </section>
 
@@ -190,11 +190,11 @@
   </section>
 
   <section class="closing wrap reveal" id="install" aria-labelledby="closing-title">
-    <div><p class="eyebrow"><span class="now-dot" aria-hidden="true"></span> Latest release · <!-- release:version -->1.0.1<!-- /release:version --></p><h2 id="closing-title">Keep your day<br>close at hand.</h2><p class="install-requirements">macOS 15 or later · Apple Silicon and Intel</p></div>
+    <div><p class="eyebrow"><span class="now-dot" aria-hidden="true"></span> Latest release · <!-- release:version -->1.1.0<!-- /release:version --></p><h2 id="closing-title">Keep your day<br>close at hand.</h2><p class="install-requirements">macOS 15 or later · Apple Silicon and Intel</p></div>
     <div class="install-guide">
       <div class="install-card" aria-labelledby="install-title">
         <h3 id="install-title">Install DayEdge</h3>
-        <p class="install-tagline">One command. Your day, closer.</p>
+        <p class="install-tagline">One Terminal command.</p>
         <fieldset class="install-modes" hidden>
           <legend class="sr-only">Install or update DayEdge</legend>
           <label><input class="sr-only" type="radio" name="install-mode" value="install" checked><span>Install</span></label>

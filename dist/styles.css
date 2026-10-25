@@ -296,6 +296,9 @@ h3{
 .skip-link:focus{
   transform:none
 }
+.skip-link:hover{
+  color:var(--button-text)
+}
 .hero{
   padding-top:54px;
   padding-bottom:100px;
@@ -320,7 +323,7 @@ h3{
   flex:none;
 }
 .hero .eyebrow{
-  font-size:10px;
+  font-size:11px;
   letter-spacing:.11em
 }
 .hero h1{
@@ -496,14 +499,18 @@ h3{
   margin-top:12px;
   color:var(--muted)
 }
+.theme-showcase{
+  container-type:inline-size
+}
+/* The stack is as tall as its front card (840 × 1418 captures), so the card never reaches the swatches. */
 .theme-enhanced .theme-stack{
+  --card:min(335px,68cqw);
   position:relative;
-  height:540px
+  height:calc(var(--card) * 1418 / 840)
 }
 .theme-enhanced .theme-stack figure{
   position:absolute;
-  width:335px;
-  max-width:68%;
+  width:var(--card);
   left:50%;
   top:0;
   translate:-50% 0;
@@ -578,7 +585,7 @@ h3{
   transform:translateY(-2px)
 }
 .theme-label{
-  font-size:9px;
+  font-size:11px;
   white-space:nowrap
 }
 .graphite{
@@ -605,7 +612,7 @@ h3{
 .theme-hint{
   text-align:center;
   margin-top:18px;
-  font-size:9px
+  font-size:11px
 }
 .reverse .section-copy{
   grid-column:2;
@@ -649,8 +656,8 @@ h3{
 }
 .detail-list .micro{
   color:var(--accent);
-  padding-top:4px;
-  font-size:10px
+  padding-top:3px;
+  font-size:11px
 }
 .detail-list p{
   font-size:13px;
@@ -923,19 +930,18 @@ footer{
     padding-top:24px;
   }
   .hero .eyebrow{
-    font-size:9px
+    font-size:11px
   }
   .hero-stage{
     aspect-ratio:590/735
   }
   .theme-enhanced .theme-stack{
-    height:440px
-  }
-  .theme-controls button{
+    --card:min(335px,74cqw)
+  }  .theme-controls button{
     width:48px
   }
   .theme-label{
-    font-size:8px
+    font-size:10px
   }
   .section{
     padding-block:104px
@@ -946,9 +952,7 @@ footer{
   .meeting-layout{
     gap:32px;
   }
-  .theme-enhanced .theme-stack figure{
-    max-width:74%
-  }
+
 }
 @media(max-width:700px){
   .wrap{
@@ -999,7 +1003,7 @@ footer{
     padding-top:0
   }
   .stage-caption{
-    font-size:10px
+    font-size:11px
   }
   .section{
     padding-block:76px
@@ -1015,27 +1019,23 @@ footer{
     grid-template-columns:minmax(0,1fr)
   }
   .theme-enhanced .theme-stack{
-    height:auto;
-    aspect-ratio:500/550
-  }
-  .theme-enhanced .theme-stack figure{
-    width:60%;
-    max-width:none
+    --card:60cqw
   }
   .theme-controls{
-    gap:0;
+    flex-wrap:wrap;
+    gap:10px 0;
     margin-top:20px
   }
   .theme-controls button{
-    flex:1;
+    flex:0 0 25%;
     width:auto;
     min-width:0
   }
   .theme-label{
-    font-size:8px
+    font-size:11px
   }
   .theme-hint{
-    font-size:8px
+    font-size:11px
   }
   .theme-description{
     margin-top:0
@@ -1081,7 +1081,7 @@ footer{
   .footer-inner p{
     order:3;
     flex-basis:100%;
-    font-size:10px
+    font-size:11px
   }
   .language-detail{
     margin-inline:0;
@@ -1102,7 +1102,7 @@ footer{
     font-size:57px
   }
   .theme-label{
-    font-size:9px
+    font-size:11px
   }
   .theme-controls{
     flex-wrap:wrap;
@@ -1166,8 +1166,6 @@ footer{
 .search-results{ aspect-ratio:808 / 378; margin-top:26px; }
 .search-input img{ width:104.4776%; left:-2.2388%; top:-50%; }
 .search-results img{ width:103.9604%; left:-1.9802%; top:-199.4709%; }
-/* A small amount of native pixel texture makes these details read as zooms. */
-.language-crop img{ image-rendering:pixelated; }
 .swatch.system{ background:linear-gradient(135deg,#f6f6f6 50%,#202020 50%); }
 /* The support sheet keeps the whole invitation a single direct link. */
 .nav-links{
@@ -1289,7 +1287,7 @@ footer{
   display:inline-flex;
   align-items:center;
   gap:7px;
-  padding-block:8px;
+  min-height:44px;
 }
 .footer-links a:hover{
   color:var(--text);
@@ -1458,6 +1456,7 @@ footer{
 }
 .copy-install{
   flex:none;
+  min-height:36px;
   border:1px solid var(--line);
   border-radius:6px;
   padding:6px 9px;
@@ -1514,14 +1513,14 @@ footer{
 .changelog-layout{display:grid;grid-template-columns:150px minmax(0,1fr);gap:70px;border-top:1px solid var(--line)}
 .release-index{position:sticky;top:104px;align-self:start;display:flex;flex-direction:column;gap:14px;padding-top:38px}
 .release-index .micro{margin-bottom:8px}
-.release-index a{font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.release-index a{display:inline-flex;align-items:center;min-height:32px;font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
 .release-index a:hover{color:var(--accent)}
 .release-entry{padding-block:38px 48px;scroll-margin-top:104px}
 .release-entry+.release-entry{border-top:1px solid var(--line)}
 .release-heading{display:flex;flex-direction:column;gap:16px;margin-bottom:30px}
 .release-version{display:flex;align-items:center;gap:16px}
 .release-version h2{font-size:32px;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
-.release-latest{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);border:1px solid var(--strong-line);border-radius:5px;padding:3px 7px}
+.release-latest{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);border:1px solid var(--strong-line);border-radius:5px;padding:3px 7px}
 .release-meta{display:flex;flex-wrap:wrap;gap:18px;color:var(--quiet);font-size:12px}
 .release-meta a{color:var(--muted)}
 .release-notes{font-size:14px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}
@@ -1557,4 +1556,5 @@ footer{
   .navigation .nav-inner,.navigation .nav-links{gap:8px}
   .navigation .nav-github span{margin-left:4px}
   .support-trigger>span{display:none}
+  .support-link{min-width:44px;justify-content:center}
 }
