@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.2.0",
+    "published": "2026-11-09",
+    "url": "https://github.com/dayedge/dayedge/releases/tag/v1.2.0",
+    "notes": "### Added\r\n\r\n- Command Window: a wide, keyboard-first workspace on ⌃⌥D with Month, Day, Tasks and Ask, for when the menu bar panel is too small.\r\n- Month at full size: each day shows its events as chips, with \"+N more\" when they don't fit, and a busy strip showing the day's meetings across the working hours.\r\n- Actions (⌘K): the selection's menu and everything you can do from here in one searchable list. It acts on the highlighted search result, too.\r\n- Tasks Overview on ⌥⌘1–4: Needs attention, Today, Next 7 Days and All Tasks, from anywhere in the app.\r\n- Task list filters, and Actions jumps straight to any Reminders list by name.\r\n\r\n### Improved\r\n\r\n- Keyboard navigation: the month grid and loading keep up as you move through the agenda.\r\n- Two windows, one calendar: jumping to a date lands correctly even while the other window's agenda is still scrolling."
+  },
+  {
     "version": "1.1.0",
     "published": "2026-10-25",
     "url": "https://github.com/dayedge/dayedge/releases/tag/v1.1.0",
