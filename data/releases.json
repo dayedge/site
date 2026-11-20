@@ -1,5 +1,11 @@
 [
   {
+    "version": "1.2.1",
+    "published": "2026-11-20",
+    "url": "https://github.com/dayedge/dayedge/releases/tag/v1.2.1",
+    "notes": "Requires macOS 15 or later. Download arm64 for Apple Silicon (M-series) or x86_64 for Intel.\r\n\r\nThis build uses DayEdge's stable self-signed certificate. It is not Apple Developer ID signed or notarized.\r\nSee the [installation instructions](https://github.com/dayedge/dayedge#install) for Gatekeeper guidance.\r\n\r\nBefore publishing: add the release highlights and smoke-test the downloaded archive on another Mac or user account."
+  },
+  {
     "version": "1.2.0",
     "published": "2026-11-09",
     "url": "https://github.com/dayedge/dayedge/releases/tag/v1.2.0",
